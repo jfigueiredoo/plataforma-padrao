@@ -102,6 +102,10 @@ function loadDetalhes() {
         document.getElementById('detalhes').style.display = 'block';
     }
 
+    }
+
+
+    
 function resetProcessDropdown() {
     const processoSelect = document.getElementById('processos');
     processoSelect.innerHTML = '<option value="">Selecione um processo:</option>';
