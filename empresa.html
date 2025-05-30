@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Manual da Empresa - Perguntas Frequentes</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilização específica para a resposta */
+        #resposta {
+            border: 2px solid #ccc;
+            border-radius: 15px;
+            padding: 10px;
+            margin-top: 20px;
+            color: #1a4492;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <div class="lateral">
+            <div class="botoes">
+                <div class="botao1">
+                    <button onclick="window.location.href='index.html'">Manual de Processos</button>
+                </div>
+                <div class="botao2">
+                    <button>Manual da Empresa</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <img src="img/logo-estrategica.png" class="logo">
+            <h1>Manual da Empresa</h1>
+
+            <!-- Dropdown para selecionar perguntas -->
+            <div>
+                <label for="areas">Selecione uma pergunta:</label>
+                <select id="areas" onchange="loadAnswer()">
+                    <option value="">Selecione uma pergunta:</option>
+                </select>
+            </div>
+
+            <!-- Div para exibir a resposta -->
+            <div id="resposta" style="display: none;">
+                <h2>Resposta:</h2>
+                <p id="resposta-texto"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script2.js"></script>
+</body>
+</html>

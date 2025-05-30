@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Manual de Processos Internos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+        <div class="lateral">
+            <div class="botoes">
+                <div class="botao1">
+                    <button>Manual de Processos</button>
+                </div>
+                <div class="botao2">
+                    <button onclick="window.location.href='empresa.html'">Manual da Empresa</button>
+                </div>
+            </div>           
+        </div>
+        <div class="container">
+            <img src="img/logo-fcapjr.png" alt="Logo do Meu Site" class="logo">        
+            <h1>Manual de Processos</h1>
+            <div id="inserir-processo">
+                <button id="addNewProcess" onclick="openAddModal()">Inserir Novo Processo</button>
+                <button id="updateProcess"  onclick="openUpdateModal()">Atualizar Processo Existente</button>
+            </div>
+            <div>
+                <label for="areas">Área:</label>
+                <select id="areas" onchange="loadCargos()">
+                    <option value="">Selecione uma área:</option>
+                </select>
+            </div>
+            <div>
+                <label for="cargos">Cargo:</label>
+                <select id="cargos" onchange="loadProcessos()">
+                    <option value="">Selecione um cargo:</option>
+                </select>
+            </div>
+            <div>
+                <label for="processos">Processo:</label>
+                <select id="processos" onchange="loadDetalhes()">
+                    <option value="">Selecione um processo:</option>
+                </select>
+            </div>
+            <div id="detalhes" style="display: none;">
+                <h2>Detalhes do Processo:</h2>
+                <ul id="detalhes-list"></ul>
+            </div>
+            <div id="fluxograma" style="display: none;">
+                <img id="fluxograma-imagem" src="" alt="Fluxograma do Processo">
+            </div>
+        </div>
+    </div>
+
+<!-- Modal e Overlay -->
+<div id="modal-overlay" class="modal-overlay" onclick="closeAllModals()"></div>
+
+<div id="modal" class="modal">
+    <span onclick="closeModal()" style="float: right; cursor: pointer;">&times;</span>
+    <h2>Detalhes do Processo</h2>
+    <p id="modal-description"></p>
+</div>
+
+<!-- Modal para Adicionar Novo Processo -->
+<div id="add-process-modal" class="modal">
+    <span onclick="closeAddModal()" style="float: right; cursor: pointer;">&times;</span>
+    <h2>Adicionar Novo Processo</h2>
+    <form id="add-process-form">
+        <label for="new-area">Área:</label>
+        <input type="text" id="new-area" placeholder="Digite a área" required><br>
+
+        <label for="new-role">Cargo:</label>
+        <input type="text" id="new-role" placeholder="Digite o cargo" required><br>
+
+        <label for="new-process">Processo:</label>
+        <input type="text" id="new-process" placeholder="Digite o nome do processo" required><br>
+
+        <label for="new-steps">Etapas do Processo (separadas por vírgula):</label>
+        <textarea id="new-steps" placeholder="Digite as etapas" required></textarea><br>
+
+        <button type="button" onclick="addNewProcess()">Salvar</button>
+    </form>
+</div>
+
+<!-- Modal para Atualizar Processo -->
+<div id="update-process-modal" class="modal">
+    <span onclick="closeUpdateModal()" style="float: right; cursor: pointer;">&times;</span>
+    <h2>Atualizar Processo Existente</h2>
+    <form id="update-process-form">
+        <label for="update-area">Área:</label>
+        <select id="update-area" onchange="populateUpdateRoles()">
+            <option value="">Selecione uma área</option>
+        </select><br>
+
+        <label for="update-role">Cargo:</label>
+        <select id="update-role" onchange="populateUpdateProcesses()">
+            <option value="">Selecione um cargo</option>
+        </select><br>
+
+        <label for="update-process">Processo:</label>
+        <select id="update-process" onchange="populateUpdateDetails()">
+            <option value="">Selecione um processo</option>
+        </select><br>
+
+        <label for="update-steps">Etapas do Processo (separadas por vírgula):</label>
+        <textarea id="update-steps" placeholder="Digite as etapas"></textarea><br>
+
+        <div class="att-btn">
+            <button type="button" onclick="updateProcess()">Salvar Alterações</button>
+            <button type="button" class="delete" onclick="deleteProcess()">Excluir Processo</button>
+        </div>
+    </form>
+</div>
+
+    <script src="js/script.js"></script>
+    <script src="js/cliente-service.js"></script>
+</body>
+</html>

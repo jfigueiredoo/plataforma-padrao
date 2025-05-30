@@ -1,0 +1,309 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dadada;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.lateral {
+    background-color: #145191;
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 95%;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #145191;
+    font-size: 32px;
+    margin-top: 25px;
+}
+
+#resposta p{
+    color: #145191;
+}
+
+h2 {
+    color: #145191;
+    font-size: 22px;
+}
+
+label {
+    color: #145191;
+    font-size: 18px;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    background-color: #145191;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    appearance: none;
+}
+
+.botoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.botoes button {
+    width: 180px;
+    padding: 15px;
+    font-size: 18px;
+    margin: 20px;
+    background-color: #ffffff;
+    color: #145191;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botoes button:hover {
+    background-color: #f0f0f0;
+}
+
+#detalhes {
+    margin-top: 15px;
+    color: #145191;
+}
+
+#detalhes-list {
+    list-style-type: none;
+    padding: 0;
+    color: #ffffff;
+}
+
+#detalhes-list li {
+    padding: 8px;
+    background-color: #145191;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+#detalhes-list li:hover {
+    background-color: #103c6b;
+}
+
+img {
+    width: 190px;
+    display: block;
+    margin: auto;
+}
+
+#fluxograma-imagem {
+    width: 100%;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 1000px;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+button {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+#inserir-processo{
+    text-align: center;
+}
+
+#inserir-processo button{
+    width: 200px;
+    height: 70px;
+    padding: 15px;
+    margin: 20px;
+    font-size: 18px;
+    background-color: #145191;
+    color: #ffffff;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input{
+    width: 97%;
+    border-radius: 5px;
+    border: 2px solid #145191;
+    background-color: none;
+    margin: 5px;
+    padding: 10px;
+}
+
+input::placeholder{
+    color: #145191;
+    font-size: 14px;
+}
+
+input:focus{
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+}
+
+#new-steps::placeholder{
+    color: #145191;
+    font-size: 14px;
+}
+
+.att-btn{
+    display: flex;
+}
+
+#update-process-form{
+    display: flex;
+    flex-direction: column;
+}
+
+#update-process-form button{
+    width: 80%;
+    padding: 15px;
+    margin-top: 25px;
+    font-size: 18px;
+    background-color: #145191;
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+#update-process-form .delete{
+    width: 20%;
+    margin-left: 20px;
+    background-color: red;
+    transition: 0.1s;
+}
+
+#update-process-form .delete:hover{
+    background-color: rgb(159, 0, 0);
+}
+
+#add-process-modal input{
+    font-size: 14px;
+}
+
+#add-process-modal button{
+    width: 100%;
+    padding: 15px;
+    margin-top: 25px;
+    font-size: 18px;
+    background-color: #145191;
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+#update-process-form button:hover{
+    background-color: #103c6b;
+}
+
+#inserir-processo button:hover{
+    background-color: #103c6b;
+}
+
+textarea{
+    border: 2px solid #145191;
+    border-radius: 5px;
+    background-color: none;
+    padding: 15px;
+    height: 40px;
+    font-size: 14px;
+}
+
+textarea:focus{
+    color: rgb(0, 0, 0);
+}
+
+#update-steps::placeholder{
+    color: #145191;
+    font-size: 14px;
+}
+
+#update-steps:focus{
+    color: #000000;
+    font-size: 14px;
+}
+
+#add-process-form{
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 700px) {
+    .lateral {
+        width: 100%;
+        padding: 15px;
+        display: block;
+        text-align: center;
+    }
+
+    .container {
+        width: 80%;
+        padding: 15px;
+        margin: 10px auto;
+    }
+}
